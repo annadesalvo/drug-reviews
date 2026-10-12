@@ -4,6 +4,8 @@ A pipeline to identify medical conditions where, despite available treatments, p
 reviews suggest remaining unmet clinical need — using the UCI Drug Reviews
 (Druglib.com) dataset as a working example.
 
+Report: **Unmet_Clinical_Need_Investigation_Report.pdf**
+
 ## What this does
 
 1. Clusters near-duplicate condition names (e.g. "migraine" vs "migraines") using
@@ -51,8 +53,7 @@ Kallumadi, S. & Gräßer, F. (2018). Drug Reviews (Druglib.com) [Dataset]. UCI M
 The dataset is fetched at runtime via ucimlrepo, never committed to this repo.
 data/ holds only locally-generated derivatives (embeddings, cached model outputs,
 figures) and is gitignored, nothing in it is redistributed. Only aggregated results
-(counts, percentages, cluster keyword representations across groups of at least 10
-reviews) are shown in the notebook or report; no individual review text or per-review
+(counts, percentages, cluster keyword representations across conditions with at least 20 reviews and drugs with more than 10 reviews) are shown in the notebook or report; no individual review text or per-review
 LLM output is published.
 
 ## Structure
@@ -61,6 +62,7 @@ LLM output is published.
 * src/functions.py -> reusable functions (tokenisation, word clouds, topic modelling)
 * data/ -> local-only, gitignored derived artifacts
 * report/ -> local-only, gitignored final write-up
+* Unmet_Clinical_Need_Investigation_Report.pdf -> written report of the findings
 
 ## Tools
 
